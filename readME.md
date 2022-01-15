@@ -17,7 +17,7 @@ navigate to the ``` /VRRA-API-TESTER ```
 run 
 
 ```
-    live-server
+$live-server
 ```
 
 and then click inside the .dist file
