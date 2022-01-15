@@ -18,7 +18,8 @@
   },
   "homepage": "https://github.com/b10815061/VRRA#readme",
   "dependencies": {
-    "axios": "^0.24.0"
+    "axios": "^0.24.0",
+    "live-server":"^1.2.1"
   },
   "devDependencies": {
     "webpack": "^5.66.0",

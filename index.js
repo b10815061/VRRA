@@ -152,7 +152,7 @@ async function deleteUserMeeting(meetingID) {
   })
     .then((res) => {
       console.log(res.data);
-      txt.innerText += str(res.data.name);
+      txt.innerText += str(res.data);
     })
     .catch((err) => console.log(err.response.data));
 }
