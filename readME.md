@@ -9,7 +9,6 @@ $cd VRRA-API-TESTER
 
 $npm install
 
-$npx webpack
 ```
 
 # run the code
@@ -19,7 +18,7 @@ navigate to the `/VRRA-API-TESTER`
 run
 
 ```
-$live-server
+$npm run build
 ```
 
 and then click inside the .dist file
