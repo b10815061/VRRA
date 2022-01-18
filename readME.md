@@ -8,6 +8,8 @@ $git clone https://github.com/b10815061/VRRA-API-TESTER
 $cd VRRA-API-TESTER
 
 $npm install
+
+$npx webpack
 ```
 
 # run the code
