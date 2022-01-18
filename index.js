@@ -188,7 +188,7 @@ async function deleteUserMeeting(meetingID) {
     .catch((err) => console.log(err.response.data));
 }
 
-login("name", "c1l1mo@gmail.com").then(a=>console.log(a))
+login("name", "c1l1mo@gmail.com").then(tkn=>createMeeting(tkn))
  
 
 
