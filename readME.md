@@ -12,13 +12,12 @@ $npm install
 
 # run the code
 
-navigate to the ``` /VRRA-API-TESTER ```
+navigate to the `/VRRA-API-TESTER`
 
-run 
+run
 
 ```
 $live-server
 ```
 
 and then click inside the .dist file
-
