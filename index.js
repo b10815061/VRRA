@@ -86,16 +86,16 @@ async function createMeeting(token) {
     .then((res) => {
       txt.innerText += str(res.data) + "\n\n";
       console.log(res.data);
-      displayUserMeeting();
+      displayUserMeeting(token);
     })
     .catch((err) => {
       console.log(err.response.data, err.response.headers);
-      displayUserMeeting();
+      displayUserMeeting(token);
     });
 }
 
 var meetingID;
-async function displayUserMeeting() {
+async function displayUserMeeting(token) {
   txt.innerText += "Displaying user meeting for c1l1mo@gmail.com ...\n";
   console.log("Displaying user meeting for c1l1mo@gmail.com ...");
   await axios({
@@ -112,12 +112,12 @@ async function displayUserMeeting() {
       console.log(res.data);
       meetingID = res.data[res.data.length - 1].id;
       console.log("ID :" + meetingID);
-      patchUserMeeting(meetingID);
+      patchUserMeeting(meetingID,token);
     })
     .catch((err) => console.log(err.response.data));
 }
 
-async function patchUserMeeting(meetingID) {
+async function patchUserMeeting(meetingID,token) {
   console.log("Modifying user meeting for c1l1mo@gmail.com");
   txt.innerText += "Modifying user meeting for c1l1mo@gmail.com\n";
   await axios({
@@ -141,17 +141,15 @@ async function patchUserMeeting(meetingID) {
     .then((res) => {
       txt.innerText += str(res.data) + "\n\n";
       console.log(res.data);
-      displayAllMeeting();
+      displayAllMeeting(token);
     })
     .catch((err) => console.log(err.response.data));
 }
 
-async function displayAllMeeting() {
+async function displayAllMeeting(token) {
   txt.innerText +=
-    "Displaying all meeting for exp5@gmail.com at 2022-1-18 ... \n";
-  console.log("Displaying all meeting for exp5@gmail.com at 2022-1-18 ... \n");
-  token = () => login("exp5", "exp5@gmail.com");
-  txt.innerText("TOKEN : ", token);
+    "Displaying all meeting for c1l1mo@gmail.com at 2022-1-18 ... \n";
+  console.log("Displaying all meeting for c1l1mo@gmail.com at 2022-1-18 ... \n");
   await axios({
     method: "get",
     baseURL: apiURL,
@@ -164,12 +162,12 @@ async function displayAllMeeting() {
     .then((res) => {
       txt.innerText += str(res.data) + "\n\n";
       console.log(res.headers, res.data);
-      deleteUserMeeting(meetingID);
+      deleteUserMeeting(token,meetingID);
     })
     .catch((err) => console.log(err.response.data));
 }
 
-async function deleteUserMeeting(meetingID) {
+async function deleteUserMeeting(token,meetingID) {
   txt.innerText += `deleting meeting id ${meetingID} ... \n`;
   console.log(`deleting meeting id ${meetingID} ... \n`);
   await axios({
